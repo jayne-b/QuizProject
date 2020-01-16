@@ -15,7 +15,11 @@ bool Question::play() {
 	}
 	do {
 		cout << "Choose an answer: ";
-		cin >> corrA;
+		while (!(cin >> corrA)) {
+			cout << "Please enter a number" << endl;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 		if (corrA > 0 && corrA < 4) {
 			if (t_answers[corrA - 1] == m_correct) { return true; }
 			else { return false; }
