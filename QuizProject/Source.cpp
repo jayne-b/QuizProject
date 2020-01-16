@@ -55,7 +55,11 @@ int main() {
 					cout << a << "\n";
 				}
 				cout << "Enter correct answer: ";
-				cin >> answer;
+				while (!(cin >> answer)) {
+					cout << "Please enter a number" << endl;
+					cin.clear();
+					cin.ignore(123, '\n');
+				}
 				if (answer > 0 && answer < 5) { corr = answers[answer - 1]; }
 				else { cout << "\nEnter a number between 1 and 4"; }
 			} while (answer < 1 || answer >4);
@@ -84,6 +88,7 @@ int main() {
 			break;
 		case 5:
 			score = 0;
+			cout << "\n";
 			if (questions.empty() || questions.size() < 5) { cout << "There are not enough questions to play" << endl; }
 			else {
 				shuffle(questions.begin(), questions.end(), random_device());
@@ -105,10 +110,13 @@ int main() {
 			cout << endl;
 			break;
 		case 7:
+			cin.clear();
+			cin.ignore(123, '\n');
 			for (auto i = 0; i < questions.size(); i++) {
 				if (questions[i].getSaved() == false) {
 					cout << "You have unsaved questions. Would you still like to quit? ";
-					cin >> quit;
+					//cin >> quit;
+					getline(cin, quit);
 					transform(quit.begin(), quit.end(), quit.begin(), [](unsigned char c) { return tolower(c); });
 					if ((quit.compare("n") == 0) || (quit.compare("no") == 0)) { choice = 0; }
 
