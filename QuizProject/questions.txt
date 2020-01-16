@@ -118,7 +118,7 @@ Range
 Half
 Atom
 Atom
-Which European city is home to the Fairy Investigation
+Which European city is home to the Fairy Investigation Society?
 Poznan
 Dublin
 Bratislava
@@ -148,7 +148,7 @@ Purple
 Beige
 Green
 Green
-What was the name of the famous song from the animation The Snowman>
+What was the name of the famous song from the animation The Snowman?
 Do You Hear What I Hear
 Walking in the Air
 If It Doesn't Snow on Christmas
